@@ -24,17 +24,15 @@ NORM=$(tput sgr0)
 #################
 # Installation
 #################
-echo -e "${CYAN}1. Installation started${NC}"
+echo "${CYAN}===> 1. Installation started${NC}"
 sudo apt-get update
 sudo apt install -y apache2 python3-pip postgresql postgresql-contrib
-echo -e "${CYAN}1. Installation completed${NC}"
-#echo "1. Installation completed"
-
+echo "${CYAN}===> 1. Installation completed${NC}"
 
 #################
 # Cloning the Repo
 #################
-echo -e "${CYAN}2. Cloning the Repo from Github${NC}"
+echo "${CYAN}===> 2. Cloning the Repo from Github${NC}"
 cd /var/www/
 sudo git clone https://github.com/tauon-solutions/letterla-api
 sudo chmod 777 -R letterla-api/
@@ -43,19 +41,19 @@ cd /var/www/letterla-api/
 #################
 # Installing requirements
 #################
-echo -e "${CYAN}3. Installing requirements${NC}"
+echo "${CYAN}===> 3. Installing requirements${NC}"
 sudo pip3 install -r /var/www/letterla-api/requirements.txt
 
 #################
 # Initialize postgres
 #################
-echo -e "${CYAN}4. Initialize postgres${NC}"
+echo "${CYAN}===> 4. Initialize postgres${NC}"
 sudo chmod +777 '/var/www/letterla-api/scripts/installation/postgres.sh'
-'/var/www/letterla-api/scripts/installation/postgres.sh
+'/var/www/letterla-api/scripts/installation/postgres.sh'
 
 #################
 # Run Flask API service
 #################
-echo -e "${CYAN}5. Run Flask API Service${NC}"
+echo "${CYAN}===> 5. Run Flask API Service${NC}"
 flask db upgrade
 flask run
