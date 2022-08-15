@@ -6,11 +6,17 @@
 cd /var/
 sudo git clone https://github.com/tauon-solutions/api-boot
 sudo nano /var/api-boot/boot_local.sh
+```
 Replace the line 
+```bash
 sudo git clone https://github.com/tauon-solutions/letterla-api
+```
 With
+```bash
 sudo git clone **<your private repo letterla-api>**
-
+```
+Change the authorization of file and execute
+```bash
 sudo chmod +777 '/var/api-boot/boot_local.sh'
 '/var/api-boot/boot_local.sh'
 ```
